@@ -1,33 +1,27 @@
-'use client'
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import rtx from "../../../public/4090.jpg";
 import Link from "next/link";
 
-const page =  () => {
-  const [data, setData] = useState([]);
-  const [loading,setLoading] = useState()
-  const [error,setError] = useState()
-  
-  const fetchApi = async()=>{
-    try {
-      setError("")
-      setLoading(true)
-      const res = await fetch("/api/blogs", {
-        cache: "no-cache",
-      });
-      const response = await res.json();
-      setData(response.res);
-    } catch (error) {
-      setError("error fetching data")
-      console.log("error",error)
-    }finally{
-      setLoading(false)
-    }
+const page = async () => {
+  let data = [];
+  let loading = true;
+  let error = "";
+
+  try {
+    error = "";
+    loading = true;
+    const res = await fetch("http://localhost:3000/api/blogs", {
+      cache: "no-cache",
+    });
+    const response = await res.json();
+    data = response.res;
+  } catch (error) {
+    error = "error fetching data";
+    console.log("error", error);
+  } finally {
+    loading = false;
   }
-  useEffect(() => {
-    fetchApi()
-  },[])
 
   return (
     <div className="flex flex-wrap mt-[80px] justify-center gap-8 max-w-7xl mx-auto p-4">

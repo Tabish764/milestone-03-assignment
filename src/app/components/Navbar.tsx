@@ -9,7 +9,7 @@ const Navbar = () => {
             <ul className='flex space-x-6 font-medium'>
                 <li className='hover:text-emerald-300 transition delay-100'><Link href={'/'}>Home</Link></li>
                 <li className='hover:text-emerald-300 transition delay-100'><Link href={'/blog'}>Blogs</Link></li>
-                <li className='hover:text-emerald-300 transition delay-100'><Link href={'/about'}>About</Link></li>
+               
             </ul>
         </div>
     </div>
