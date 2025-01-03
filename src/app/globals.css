@@ -25,3 +25,46 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.card {
+  
+  padding: 2em;
+  width: 300px;
+  height: 370px;
+  background-color: rgb(33, 33, 33);
+  position: relative;
+  border-radius: 10px;
+ 
+}
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.card::after,.card::before {
+  content: '';
+  position: absolute;
+  height: 101%;
+  width: 101%;
+  background-image: conic-gradient(from var(--angle),transparent 70%,rgb(29, 250, 0));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: -1; 
+  padding: 13px; 
+  border-radius: 10px; 
+  animation: 3.5s spin linear infinite;
+}
+
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.8;
+}
+
+@keyframes spin {
+  from {
+    --angle:0deg;
+  }
+  to {
+    --angle:360deg;
+  }
+}
