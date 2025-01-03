@@ -34,7 +34,7 @@ const page = async () => {
       {loading && <h1>loading...</h1>}
       {data &&
         data.map((blog) => (
-          <div className="card  flex flex-col">
+          <div key={blog.id} className="card  flex flex-col">
             <div className="flex justify-center rounded-md items-center">
               <Image
                 className="rounded-sm "

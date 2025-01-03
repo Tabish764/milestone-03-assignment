@@ -14,7 +14,7 @@ const Hero = () => {
 
           <p className="text-lg sm:text-xl md:text-xl max-w-3xl  text-white mt-4  ">
             Find detailed GPU specs, performance reviews, and comparisons to
-            help you choose the best GPU for your needs. Whether you're gaming,
+            help you choose the best GPU for your needs. Whether you&apos;re gaming,
             designing, or working on high-performance tasks, we have the latest
             information to guide your decision.
           </p>
