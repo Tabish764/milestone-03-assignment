@@ -2,14 +2,9 @@ import Image from "next/image";
 import React from "react";
 import rtx from "../../../public/4090.jpg";
 import Link from "next/link";
-interface data {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-}
+
 const page = async () => {
-  let data: data[] = [];
+  let data = [];
   let loading = true;
   let error = "";
 
