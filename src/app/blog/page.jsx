@@ -11,7 +11,7 @@ const page = async () => {
   try {
     error = "";
     loading = true;
-    const res = await fetch("https://milestone-03-assignment-liard.vercel.app/blog/api/blogs", {
+    const res = await fetch("https://milestone-03-assignment-liard.vercel.app/api/blogs", {
       cache: "no-cache",
     });
     const response = await res.json();
